@@ -20,16 +20,12 @@ import java.util.Random;
 @State(Scope.Benchmark)
 public class LinkedListToMiddleBenchmark {
     
-    private static int ITERATION_SIZE = 100_000;
-    
-    private static Random rnd = new Random();
-    
     @Benchmark
     public List linkedList() {
         List<Integer> list = new LinkedList<>();
-        for (int i = 0; i < ITERATION_SIZE; i++) {
-            list.add(list.size() / 2, rnd.nextInt());
-        }
+		for (int i = 0; i < PackageUtil.ITERATION_SIZE; i++) {
+			list.add(list.size() / 2, 200);
+		}
         return list;
     }
 }

@@ -22,16 +22,14 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Benchmark)
 public class LinkedListToEndBenchmark {
     
-    private static int ITERATION_SIZE = 1_000_000;
-    
     private static Random rnd = new Random();
     
     @Benchmark
     public List linkedList() {
         List<Integer> list = new LinkedList<>();
-        for (int i = 0; i < ITERATION_SIZE; i++) {
-            list.add(rnd.nextInt());
-        }
+		for (int i = 0; i < PackageUtil.ITERATION_SIZE; i++) {
+			list.add(200);
+		}
         return list;
     }
 }
