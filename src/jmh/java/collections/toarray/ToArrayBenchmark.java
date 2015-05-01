@@ -31,6 +31,15 @@ public class ToArrayBenchmark {
 	}
 
 	@Benchmark
+	public ArrayList<Integer> manual_copy() {
+		final ArrayList<Integer> newList = new ArrayList<>(list.size());
+		for (Integer integer : list) {
+			newList.add(integer);
+		}
+		return newList;
+	}
+
+	@Benchmark
 	public ArrayList<Integer> simple_copy() {
 		return new ArrayList<>(list);
 	}
