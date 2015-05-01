@@ -35,13 +35,12 @@ dependencies {
 
 jmh {
 	jmhVersion = '1.7.1' // Specifies JMH version
-	include = 'collections.add.*List.*End*.'
+	include = 'collections.copy.*.'
 	fork = 2
 	threads = 2
 	warmupIterations = 3
 	iterations = 3
 	forceGC = true
-	timeUnit = 'ms'
 	jvmArgsAppend = "-verbose:gc -Xloggc:gc-${new Date().time}.log -XX:MaxPermSize=2g  -XX:+UseG1GC "
 }
 

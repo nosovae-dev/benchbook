@@ -20,9 +20,9 @@ import java.util.List;
 public class LinkedListToStartBenchmark {
 	@Benchmark
 	public List linkedList() {
-		List<Integer> list = new LinkedList<>();
+		LinkedList<Integer> list = new LinkedList<>();
 		for (int i = 0; i < PackageUtil.ITERATION_SIZE; i++) {
-			list.add(0, 200);
+			list.addFirst(200);
 		}
 		return list;
 	}
